@@ -1,0 +1,25 @@
+{
+  "name": "proyectopm",
+  "version": "1.0.0",
+  "description": "Proyecto del squad Peter Pan usando APIs - AJAX - JSON",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "Peter",
+    "Pan",
+    "PM",
+    "APIs",
+    "AJAX",
+    "JSON",
+    "Mm�úsica"
+  ],
+  "author": "Diana Navarro <navarroruiz.diana@gmail.com>",
+  "license": "MIT"
+}
