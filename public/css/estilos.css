@@ -1,24 +1,22 @@
 body{
-	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
+	background-color: #E0E3DA;
 	height: 100vh;
-	background-color: #333;
-	position: relative;
-	font-weight: 300;
-    line-height: 1.5;
+	text-align: center;
 }
-.logo{
-    width: 50%;
-    position: absolute;
-	top: 15%;
-	left: 25%;
+.logo img{
+	margin-top: 100px;
+	width: 35%;
 }
 .boton{
-	position: absolute;
-	bottom: 20%;
-	left: 25%;
+    margin-top: 40px;
+}
+.boton a{
 	width: 50%;
 	background-color: #B37405;
+	border-color: #B37405;
 	color: #fff;
+	font-size: 20px;
+	padding: 10px;
 }
