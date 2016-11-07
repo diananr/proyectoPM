@@ -2,22 +2,26 @@ body{
 	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
-	background-color: #D1D0CB;
+	background-color: #3A3A3A;
 	height: 100vh;
 	text-align: center;
 }
 .logo img{
-	margin-top: 100px;
-	width: 35%;
+	margin-top: 120px;
+	width: 25%;
 }
 .boton{
     margin-top: 40px;
 }
 .boton a{
 	width: 50%;
-	background-color: #B37405;
-	border-color: #B37405;
+	background-color: #f39e06;
+	border-color: #f39e06;
 	color: #fff;
-	font-size: 20px;
-	padding: 10px;
+	font-size: 18px;
+	line-height: 2.50;
+}
+.boton a:hover{
+	background-color: #fff;
+	border-color: #fff;
 }
