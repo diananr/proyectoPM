@@ -5,6 +5,7 @@ body{
 	background-color: #3A3A3A;
 	height: 100vh;
 	text-align: center;
+	color: #fff;
 }
 .logo img{
 	margin-top: 120px;
@@ -13,7 +14,7 @@ body{
 .boton{
     margin-top: 40px;
 }
-.boton a{
+#btn2{
 	width: 50%;
 	background-color: #f39e06;
 	border-color: #f39e06;

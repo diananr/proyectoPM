@@ -1,24 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-	<title>PM - Inicio</title>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/estilos.css">
-	<link rel="shortcut icon" href="img/favicon.ico">
-</head>
-<body>
-	<div class="container">
-		<div class="logo">
-			<img class="center-block" src="img/logo.png" alt="pm-logo">
+	<head>
+		<title>PM - Inicio</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/estilos.css">
+		<link rel="shortcut icon" href="img/favicon.ico">
+	</head>
+	<body>
+		<div class="container">
+		  <div id="login">
+		    <div class="logo">
+		      <img class="center-block" src="img/logo.png" alt="pm-logo">
+		    </div>
+		    <div class="boton">
+		       <a href="/login" class="btn btn-primary " id="btn2">Inicia sesión</a>
+		    </div>
+		  </div>
+		  <div id="loggedin">
+		    <div id="user-profile">
+		    </div>
+		    <div id="oauth">
+		    </div>
 		</div>
-		<div class="boton">
-			<a href="" class="btn">Inicia sesión</a>
-		</div>
-	</div>
+
+	<script id="user-profile-template" type="text/x-handlebars-template">
+	  <h1>Logged in as {{display_name}}</h1>
+	  <div class="media">
+	    <div class="pull-left">
+	      <img class="media-object" width="150" src="{{images.0.url}}" />
+	    </div>
+	    <div class="media-body">
+	      <dl class="dl-horizontal">
+	        <dt>Name</dt><dd class="clearfix">{{display_name}}</dd>
+	        <!-- <dt>Id</dt><dd>{{id}}</dd> -->
+	        <dt>Email</dt><dd>{{email}}</dd>
+	       <!--  <dt>Spotify URI</dt><dd><a href="{{external_urls.spotify}}">{{external_urls.spotify}}</a></dd>
+	       <dt>Link</dt><dd><a href="{{href}}">{{href}}</a></dd>
+	       <dt>Profile Image</dt><dd class="clearfix"><a href="{{images.0.url}}">{{images.0.url}}</a></dd>
+	       <dt>Country</dt><dd>{{country}}</dd> -->
+	      </dl>
+	    </div>
+	  </div>
+	</script>
+
+	<script id="oauth-template" type="text/x-handlebars-template">
+	  <!-- <h2>oAuth info</h2>
+	  <dl class="dl-horizontal">
+	    <dt>Access token</dt><dd class="text-overflow">{{access_token}}</dd>
+	    <dt>Refresh token</dt><dd class="text-overflow">{{refresh_token}}></dd>
+	  </dl> -->
+	</script>
+	<script type="text/javascript" src="js/handlebars.min.js"></script>
 	<script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-</body>
+	<script type="text/javascript" src="js/main.js"></script>
+	</body>
 </html>
+

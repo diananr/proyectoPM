@@ -4,7 +4,10 @@
   "description": "Proyecto del squad Peter Pan usando APIs - AJAX - JSON",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.14.0"
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "querystring": "^0.2.0",
+    "request": "^2.78.0"
   },
   "devDependencies": {},
   "scripts": {
