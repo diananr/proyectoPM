@@ -2,7 +2,10 @@ body{
 	box-sizing: border-box;
 	margin: 0px;
 	padding: 0px;
-	background-color: #3A3A3A;
+	background-image: url(../img/fondo.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
 	height: 100vh;
 	text-align: center;
 	color: #fff;
@@ -16,22 +19,37 @@ body{
 }
 #btn2{
 	width: 50%;
-	background-color: #f39e06;
-	border-color: #f39e06;
+	background-color: #E71D36;
+	border-color: #E71D36;
 	color: #fff;
 	font-size: 18px;
 	line-height: 2.50;
 }
 .boton a:hover{
 	background-color: #fff;
-	border-color: #fff;
+	color: #E71D36;
+}
+.loggedin {
+  display: none;
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 500px;
+}
+.buscar{
+	background-color: #E71D36;
 }
 #search-form, .form-control {
     margin-bottom: 20px;
 }
+.form-control{
+	width: 80%;
+}
 .cover {
-    width: 300px;
-    height: 300px;
+    width: 150px;
+    height: 150px;
     display: inline-block;
     background-size: cover;
 }
