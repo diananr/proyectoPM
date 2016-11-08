@@ -31,7 +31,7 @@
 				<div class="loggedin">
 					<div class="row">
 						<div class="col-md-12">
-							<h1>Buscar Artista</h1>
+							<h3>Buscar Artista</h3>
 							<p>Escribe el nombre de un artista y luego has clic en el botón Buscar:</p>
 							<form id="search-form" role="form">
 								<div class="form-group">
@@ -52,12 +52,12 @@
 			</div>
 		</div>
 		<script id="user-profile-template" type="text/x-handlebars-template">
-	  		<h1>¡Hola {{display_name}}!</h1>
+	  		<h2>¡Hola {{display_name}}!</h2>
 	 		<div class="media">
-	    		<div class="pull-left">
-	      			<img class="media-object" width="150" src="{{images.0.url}}" />
+	    		<div class="col-xs-4">
+	      			<img class="media-object" width="100%" src="{{images.0.url}}" />
 	    		</div>
-	    		<div class="media-body">
+	    		<div class="col-xs-8">
 					<dl class="dl-horizontal">
 						<dt>Name</dt><dd class="clearfix">{{display_name}}</dd>
 						<!-- <dt>Id</dt><dd>{{id}}</dd> -->

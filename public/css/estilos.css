@@ -64,3 +64,5 @@ body{
 .cover.playing {
     border: 5px solid #e45343;
 }
+.dl-horizontal dt{text-align: left;}
+.dl-horizontal dd{text-align: left;}
