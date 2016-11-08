@@ -140,14 +140,21 @@
 
 function buscarLetra(){
   console.log("texto");
-var servicio = "track.search?q_lyrics=music%20hack%20day";
-
   $.ajax({
     type: "GET",
-    dataType: 'jsonp',
-    url: "http://api.musixmatch.com/ws/1.1/"+ servicio,
+    dataType: "jsonp",
+    data: {
+      apikey: "af357840f7555def09db452b7c8b0865",
+      format: "jsonp",
+      q_track: "back to december",
+      q_artist: "taylor swift"
+    },
+    url: "http://api.musixmatch.com/ws/1.1/track.search",
     success: function(response){
       console.log(response);
+    },
+    error: function(error) {
+      console.log(error);
     }
   });
 }
