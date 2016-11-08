@@ -78,6 +78,7 @@
     playingCssClass = 'playing',
     audioObject = null;
   var fetchTracks = function (albumId, callback) {
+    
     $.ajax({
         url: 'https://api.spotify.com/v1/albums/' + albumId,
         success: function (response) {
@@ -103,9 +104,56 @@
     });
   };
   resultados.addEventListener('click', function (e) {
-    console.log("resultadosclick");
-          console.log(e);
     var target = e.target;
+    console.log(target);
+    var numArray = target.getAttribute("data-id");
+    var nameArray = target.getAttribute("data-name");
+    var nameartist = target.getAttribute("data-artis");
+    console.log(nameartist);
+    /*----buscar letra de musica -----*/
+      function buscarId(nameArray,nameartist){
+        console.log("texto");
+        $.ajax({
+          type: "GET",
+          dataType: "jsonp",
+          data: {
+            apikey: "af357840f7555def09db452b7c8b0865",
+            format: "jsonp",
+            q_track: "nameArray",
+            q_artist: "nameartist"
+          },
+          url: "http://api.musixmatch.com/ws/1.1/track.search",
+          success: function(response){
+            buscarLetra(response.message.body.track_list[0].track.track_id);
+            console.log(response.message.body.track_list[0].track.track_id);
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
+      }
+
+      function buscarLetra(track_id){
+        console.log("letra");
+        $.ajax({
+          type: "GET",
+          dataType: "jsonp",
+          data: {
+            apikey: "af357840f7555def09db452b7c8b0865",
+            format: "jsonp",
+            track_id: track_id
+          },
+          url: "http://api.musixmatch.com/ws/1.1/track.lyrics.get",
+          success: function(response){
+            console.log(response);
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
+      }
+
+    /*--- fin de busqueda---*/
     if (target !== null && target.classList.contains('cover')) {
         if (target.classList.contains(playingCssClass)) {
             audioObject.pause();
@@ -138,23 +186,3 @@
   }
 })();
 
-function buscarLetra(){
-  console.log("texto");
-  $.ajax({
-    type: "GET",
-    dataType: "jsonp",
-    data: {
-      apikey: "af357840f7555def09db452b7c8b0865",
-      format: "jsonp",
-      q_track: "back to december",
-      q_artist: "taylor swift"
-    },
-    url: "http://api.musixmatch.com/ws/1.1/track.search",
-    success: function(response){
-      console.log(response);
-    },
-    error: function(error) {
-      console.log(error);
-    }
-  });
-}

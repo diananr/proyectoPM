@@ -76,7 +76,8 @@
 		</script>   
 	    <script id="resultados-template" type="text/x-handlebars-template">
 	        {{#each albums.items}}
-			<div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover"></div>
+
+			<div style="background-image:url({{images.0.url}})" data-album-id="{{id}}" class="cover" data-id = "{{@index}}" data-name= "{{name}}" data-artis="{{artists.0.name}}"></div>
 	            <!--<h6 class="nombre">{{name}}</h6>
 				<h6 class="popularidad">{{href}}</h6>-->        
 	        {{/each}}
