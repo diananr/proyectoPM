@@ -93,11 +93,18 @@
             type: 'album'
         },
         success: function (response) {
+          console.log("searchAlbums");
+          console.log(response);
+            var cantidadMostrados = response.albums.items.length;
+            var cantidadTotal = response.albums.total;
+            $("#parrafo").text("Mostrando " + cantidadMostrados + " de un total " + cantidadTotal);
             resultadosPlaceholder.innerHTML = template(response);
         }
     });
   };
   resultados.addEventListener('click', function (e) {
+    console.log("resultadosclick");
+          console.log(e);
     var target = e.target;
     if (target !== null && target.classList.contains('cover')) {
         if (target.classList.contains(playingCssClass)) {
@@ -121,6 +128,7 @@
     }
   });
   document.getElementById('search-form').addEventListener('submit', function (e) {
+    
     e.preventDefault();
     searchAlbums(document.getElementById('query').value);
   }, false);
@@ -130,3 +138,16 @@
   }
 })();
 
+function buscarLetra(){
+  console.log("texto");
+var servicio = "track.search?q_lyrics=music%20hack%20day";
+
+  $.ajax({
+    type: "GET",
+    dataType: 'jsonp',
+    url: "http://api.musixmatch.com/ws/1.1/"+ servicio,
+    success: function(response){
+      console.log(response);
+    }
+  });
+}
