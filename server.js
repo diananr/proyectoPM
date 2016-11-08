@@ -120,6 +120,7 @@ app.get('/refresh_token', function(req, res) {
       refresh_token: refresh_token
     },
     json: true
+    
   };
 
   request.post(authOptions, function(error, response, body) {
