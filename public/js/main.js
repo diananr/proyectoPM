@@ -130,5 +130,5 @@
   if(typeof window.history.pushState == 'function') {
     window.history.pushState({}, "Hide", "http://localhost:8888/callback/");
   }
-}();
+
 

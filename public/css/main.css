@@ -1,7 +1,7 @@
 
-body { background: #f5c9c5; }
+
 header { margin-top: 30px; }
-header a { color: black; text-decoration: none; }
+header a { color: white; text-decoration: none; }
 header a:hover { text-decoration: none; }
 form { margin-top: 20px; }
 form, #results { padding: 0 20px; }
