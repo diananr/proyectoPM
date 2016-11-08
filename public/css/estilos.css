@@ -1,3 +1,8 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
 body{
 	box-sizing: border-box;
 	margin: 0px;
@@ -59,3 +64,8 @@ body{
 .cover.playing {
     border: 5px solid #e45343;
 }
+.nombre{
+	font-weight: bold;
+}
+.dl-horizontal dt{text-align: left;}
+.dl-horizontal dd{text-align: left;}

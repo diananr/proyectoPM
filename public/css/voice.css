@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Helvetica, Arial;
+  font-size: 16px;
+  line-height: 1.3em;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url(../img/fondo.png);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+main {
+  flex: 1;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.play{
+  margin-left: 30px;
+}
+
+.action, .recognized {
+  padding: 10px;
+  position: relative;
+  margin-bottom: 10px;
+  width:80%;
+}
+
+.action {
+  text-align: right;
+  background-color: #FACC2E;
+  margin-left:20%;
+  border-radius: 5px 5px 0 5px;
+  font-weight:bold;
+  color:white;
+}
+
+.action:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 18px;
+  border-style: solid;
+  border-color: transparent transparent #FACC2E transparent;
+  bottom: 0px;
+  right: -17px;
+}
+
+.recognized {
+  text-align: left;
+  background-color: #FACC2E;
+  font-weight: bold;
+  border-radius: 5px 5px 5px 0;
+  font-weight:bold;
+  color:white;
+}
+
+.recognized:after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 18px;
+  border-style: solid;
+  border-color: transparent transparent #FACC2E transparent;
+  bottom: 0px;
+  left: -17px;
+}
+
+.recognized > div:before { content: open-quote }
+.recognized > div:after  { content: close-quote }
+
+#conversation {
+  padding: 20px;
+}
+
+#conversation::before {
+  content: "";
+  height: 1px;
+  width: 200px;
+  background-color: #ddd;
+  display: block;
+  margin: 10px auto;
+}
+
+#conversation img {
+  margin-top: 5px;
+}
+.play{
+  color: white;
+}
+.voz{
+  color:#CED8F6;
+}
