@@ -19,38 +19,41 @@
 					<a href="/login" class="btn" id="btn2">Inicia sesión</a>
 				</div>
 			</div>
-			<div class="loggedin">
-				<div class="row">
-			  		<div class="col-xs-12">
-			    		<div id="user-profile"></div>
-			    		<div id="oauth"></div>	
-			  		</div>
-			  	</div>
-			</div>
-			<div class="loggedin">
-				<div class="row">
-					<div class="col-md-12">
-						<h1>Buscar Artista</h1>
-						<p>Escribe el nombre de un artista y luego has clic en el botón Buscar:</p>
-						<p id="parrafo"></p>
-						<form id="search-form" role="form">
-							<div class="form-group">
-								<input type="text" id="query" value="" class="form-control center-block" placeholder="Escribe el nombre de un Artista..."/>
-							</div>
-							<button type="submit" id="search" class="btn buscar" />Buscar</button>
-							<button type="reset" id="search" class="btn btn-info" />Limpiar</button>
-						</form>
-					</div>
+			<div id="perfil">
+				<div class="loggedin">
+					<div class="row">
+				  		<div class="col-xs-12">
+				    		<div id="user-profile"></div>
+				    		<div id="oauth"></div>	
+				  		</div>
+				  	</div>
 				</div>
-				<div class="row">
-					<div class="col-xs-6">
-						<div id="resultados"></div>
+				<div class="loggedin">
+					<div class="row">
+						<div class="col-md-12">
+							<h1>Buscar Artista</h1>
+							<p>Escribe el nombre de un artista y luego has clic en el botón Buscar:</p>
+							<p id="parrafo"></p>
+							<form id="search-form" role="form">
+								<div class="form-group">
+									<input type="text" id="query" value="" class="form-control center-block" placeholder="Escribe el nombre de un Artista..."/>
+								</div>
+								<button type="submit" id="search" class="btn buscar" />Buscar</button>
+								<button type="reset" id="search" class="btn btn-info" />Limpiar</button>
+							</form>
+						</div>
 					</div>
-					<div class="col-xs-6">
-						<div id="letra"></div>
-					</div>
+					<div class="row">
+						<div class="col-xs-6">
+							<div id="resultados"></div>
+						</div>
+						<div class="col-xs-6">
+							<div id="letra"></div>
+						</div>
+					</div>	
 				</div>	
 			</div>
+			
 		</div>
 		<script id="user-profile-template" type="text/x-handlebars-template">
 	  		<h1>¡Hola {{display_name}}!</h1>
@@ -94,4 +97,5 @@
 
 	</body>
 </html>
+
 

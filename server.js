@@ -3,9 +3,9 @@ var request = require('request'); // "Request" library
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-var client_id = "097be9424127468fb2b74a74272607a5"; // Your client id
-var client_secret = "e96a0c40468b46b5b84e1b1bc9a97cee"; // Your secret
-var redirect_uri = "http://localhost:8888/callback"; // Your redirect uri
+var client_id = "ba533f31a4f84e53a018ffe5f911169f"; // Your client id
+var client_secret = "a1d3984610ca4839a4d1042227cff64a"; // Your secret
+var redirect_uri = "http://project-pm.herokuapp.com/callback/"; // Your redirect uri
 
 /**
  * Generates a random string containing numbers and letters
@@ -120,6 +120,7 @@ app.get('/refresh_token', function(req, res) {
       refresh_token: refresh_token
     },
     json: true
+    
   };
 
   request.post(authOptions, function(error, response, body) {
@@ -132,5 +133,11 @@ app.get('/refresh_token', function(req, res) {
   });
 });
 
-console.log('Listening on 8888');
-app.listen(8888);
+//HEROKU
+app.set('port', (process.env.PORT || 8888));
+app.get('/', function(req, res) {
+  res.render("index.html");
+});
+app.listen(app.get('port'), function(){
+  console.log("encendido");
+});

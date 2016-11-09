@@ -1,5 +1,4 @@
 (function() {
-
   /**
    * Obtains parameters from the hash of the URL
    * @return Object
@@ -71,6 +70,9 @@
       });
     }, false);*/
   }
+
+})();
+
   // Buscador
   var templateSource = document.getElementById('resultados-template').innerHTML,
     template = Handlebars.compile(templateSource),
@@ -147,7 +149,7 @@
   if(typeof window.history.pushState == 'function') {
     window.history.pushState({}, "Hide", "http://localhost:8888/callback/");
   }
-})();
+
 
     /*----buscar letra de musica -----*/
       function buscarId(nameTrack,nameartist){
