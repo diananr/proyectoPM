@@ -104,56 +104,15 @@
     });
   };
   resultados.addEventListener('click', function (e) {
+    console.log("estoy haciendo click");
     var target = e.target;
     console.log(target);
     var numArray = target.getAttribute("data-id");
     var nameArray = target.getAttribute("data-name");
     var nameartist = target.getAttribute("data-artis");
+    
+    console.log(nameArray);
     console.log(nameartist);
-    /*----buscar letra de musica -----*/
-      function buscarId(nameArray,nameartist){
-        console.log("texto");
-        $.ajax({
-          type: "GET",
-          dataType: "jsonp",
-          data: {
-            apikey: "af357840f7555def09db452b7c8b0865",
-            format: "jsonp",
-            q_track: "nameArray",
-            q_artist: "nameartist"
-          },
-          url: "http://api.musixmatch.com/ws/1.1/track.search",
-          success: function(response){
-            buscarLetra(response.message.body.track_list[0].track.track_id);
-            console.log(response.message.body.track_list[0].track.track_id);
-          },
-          error: function(error) {
-            console.log(error);
-          }
-        });
-      }
-
-      function buscarLetra(track_id){
-        console.log("letra");
-        $.ajax({
-          type: "GET",
-          dataType: "jsonp",
-          data: {
-            apikey: "af357840f7555def09db452b7c8b0865",
-            format: "jsonp",
-            track_id: track_id
-          },
-          url: "http://api.musixmatch.com/ws/1.1/track.lyrics.get",
-          success: function(response){
-            console.log(response);
-          },
-          error: function(error) {
-            console.log(error);
-          }
-        });
-      }
-
-    /*--- fin de busqueda---*/
     if (target !== null && target.classList.contains('cover')) {
         if (target.classList.contains(playingCssClass)) {
             audioObject.pause();
@@ -162,7 +121,11 @@
                 audioObject.pause();
             }
             fetchTracks(target.getAttribute('data-album-id'), function (data) {
+                console.log(data);
                 audioObject = new Audio(data.tracks.items[0].preview_url);
+                var nombreCancion = data.tracks.items[0].name;
+                console.log(nombreCancion);
+                buscarId(nombreCancion,nameartist);
                 audioObject.play();
                 target.classList.add(playingCssClass);
                 audioObject.addEventListener('ended', function () {
@@ -185,4 +148,51 @@
     window.history.pushState({}, "Hide", "http://localhost:8888/callback/");
   }
 })();
+
+    /*----buscar letra de musica -----*/
+      function buscarId(nameTrack,nameartist){
+        //console.log("texto");
+        $.ajax({
+          type: "GET",
+          dataType: "jsonp",
+          data: {
+            apikey: "af357840f7555def09db452b7c8b0865",
+            format: "jsonp",
+            q_track: nameTrack,
+            q_artist: nameartist
+          },
+          url: "http://api.musixmatch.com/ws/1.1/track.search",
+          success: function(response){
+           // console.log(response);
+            buscarLetra(response.message.body.track_list[0].track.track_id);
+           // console.log(response.message.body.track_list[0].track.track_id);
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
+      }
+
+      function buscarLetra(track_id){
+       // console.log("letra");
+        $.ajax({
+          type: "GET",
+          dataType: "jsonp",
+          data: {
+            apikey: "af357840f7555def09db452b7c8b0865",
+            format: "jsonp",
+            track_id: track_id
+          },
+          url: "http://api.musixmatch.com/ws/1.1/track.lyrics.get",
+          success: function(response){
+            console.log(response);
+            $("#letra").text(response.message.body.lyrics.lyrics_body);
+          },
+          error: function(error) {
+            console.log(error);
+          }
+        });
+      }
+
+    /*--- fin de busqueda---*/
 
